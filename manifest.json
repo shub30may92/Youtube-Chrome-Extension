@@ -14,5 +14,13 @@
 		"tabs",
 		"background",
 		"https://www.youtube.com/"
-	]
+	],
+
+	"commands": {
+		"_execute_browser_action": {
+			"suggested_key": {
+				"windows": "Alt+Y"
+			}
+		}
+	}
 }

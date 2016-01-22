@@ -22,5 +22,4 @@ function random_func(){
 
 document.addEventListener('DOMContentLoaded', function() {
   random_func();
-  return;
 });
