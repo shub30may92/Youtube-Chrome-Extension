@@ -22,5 +22,9 @@
 				"windows": "Alt+Y"
 			}
 		}
-	}
+	},
+	
+	"background": {
+    "scripts": ["background.js"]
+  },
 }
