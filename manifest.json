@@ -4,7 +4,7 @@
 	"name": "Play/Pause youtube videos",
 	"description": "This extension searches through tabs if a youtube video is being played, then plays/pauses it.",
 	"version": "1.0",
-
+	"options_page": "options.html",
 	"browser_action": {
 		"default_icon": "icon.png",
 		"default_popup": "popup.html"
