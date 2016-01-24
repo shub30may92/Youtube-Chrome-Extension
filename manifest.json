@@ -17,10 +17,11 @@
 	],
 
 	"commands": {
-		"toggle-feature-foo": {
+		"toggle-feature-foo": { 	
 		    "suggested_key": {
 		      "default": "Ctrl+Shift+9",
-		      "mac": "Command+Shift+9"
+		      "mac": "Command+Shift+9",
+		      "linux": "Ctrl+Shift+9"
 		    },
 		    "description": "Toggle feature foo",
 		    "global": true
@@ -28,7 +29,8 @@
 
 		"_execute_browser_action": {
 			"suggested_key": {
-				"windows": "Alt+Y"
+				"windows": "Alt+Y",
+				"linux": "Alt+Y"
 			},
 			"description": "Play/pause"
 		}
