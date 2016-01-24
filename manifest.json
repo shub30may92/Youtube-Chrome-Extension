@@ -17,14 +17,25 @@
 	],
 
 	"commands": {
+		"toggle-feature-foo": {
+		    "suggested_key": {
+		      "default": "Ctrl+Shift+9",
+		      "mac": "Command+Shift+9"
+		    },
+		    "description": "Toggle feature foo",
+		    "global": true
+		 },
+
 		"_execute_browser_action": {
 			"suggested_key": {
 				"windows": "Alt+Y"
-			}
+			},
+			"description": "Play/pause"
 		}
+	    
 	},
 	
 	"background": {
-    "scripts": ["background.js"]
-  },
+    "scripts": ["js/background.js"]
+  }
 }
