@@ -3,7 +3,7 @@
 
 	"name": "Play/Pause youtube videos",
 	"description": "This extension searches through tabs if a youtube video is being played, then plays/pauses it.",
-	"version": "1.0",
+	"version": "1.1",
 	"options_page": "options.html",
 	"browser_action": {
 		"default_icon": "icon.png",
@@ -30,7 +30,8 @@
 		"_execute_browser_action": {
 			"suggested_key": {
 				"windows": "Alt+Y",
-				"linux": "Alt+Y"
+				"linux": "Alt+Y",
+				"mac": "Alt+Y"
 			},
 			"description": "Play/pause"
 		}
