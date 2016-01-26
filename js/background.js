@@ -9,8 +9,20 @@ chrome.commands.onCommand.addListener(function(command) {
   chrome.tabs.query({'url':'*://www.youtube.com/watch*'},function(tab){
       // console.log(tab[0].url);
       TabId = tab[0].id;
-      chrome.tabs.executeScript(TabId,{
-        code: "document.querySelector('.ytp-play-button').click();"
-      });
+      if(command == "play_pause"){
+	      chrome.tabs.executeScript(TabId,{
+	        code: "document.querySelector('.ytp-play-button').click();"
+	      });
+	  }
+	  if(command == "play_next"){
+	      chrome.tabs.executeScript(TabId,{
+	        code: "document.querySelector('.ytp-next-button').click();"
+	      });
+	  }
+	  if(command == "play_previous"){
+	      chrome.tabs.executeScript(TabId,{
+	        code: "document.querySelector('.ytp-prev-button').click();"
+	      });
+	  }
   });
 });

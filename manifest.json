@@ -17,15 +17,35 @@
 	],
 
 	"commands": {
-		"toggle-feature-foo": { 	
+		"play_previous": {
+			"suggested_key": {
+				"default": "Ctrl+Shift+1",
+				"linux": "Ctrl+Shift+1",
+				"mac": "Command+Shift+1"
+			},
+			"description": "Play previous",
+			"global": true
+		},
+
+		"play_pause": { 	
 		    "suggested_key": {
-		      "default": "Ctrl+Shift+9",
-		      "mac": "Command+Shift+9",
-		      "linux": "Ctrl+Shift+9"
+		      "default": "Ctrl+Shift+2",
+		      "mac": "Command+Shift+2",
+		      "linux": "Ctrl+Shift+2"
 		    },
-		    "description": "Toggle feature foo",
+		    "description": "Play/pause",
 		    "global": true
 		 },
+
+		"play_next": {
+			"suggested_key": {
+				"default": "Ctrl+Shift+3",
+				"linux": "Ctrl+Shift+3",
+				"mac": "Command+Shift+3"
+			},
+			"description": "Play Next",
+			"global": true
+		},
 
 		"_execute_browser_action": {
 			"suggested_key": {
