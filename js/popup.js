@@ -10,14 +10,14 @@
  */
 function random_func(){
   // console.log("called");
-  var TabId = 0;
-  chrome.tabs.query({'url':'*://www.youtube.com/watch*'},function(tab){
-      // console.log(tab[0].url);
-      TabId = tab[0].id;
-      chrome.tabs.executeScript(TabId,{
-        code: "document.querySelector('.ytp-play-button').click();"
-      });
-  });
+  // var TabId = 0;
+  // chrome.tabs.query({'url':'*://www.youtube.com/watch*'},function(tab){
+  //     // console.log(tab[0].url);
+  //     TabId = tab[0].id;
+  //     chrome.tabs.executeScript(TabId,{
+  //       code: "document.querySelector('.ytp-play-button').click();"
+  //     });
+  // });
 }
 
 document.addEventListener('DOMContentLoaded', function() {
