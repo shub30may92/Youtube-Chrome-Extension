@@ -3,7 +3,7 @@
 
 	"name": "Play/Pause youtube videos",
 	"description": "This extension searches through tabs if a youtube video is being played, then plays/pauses it.",
-	"version": "1.1",
+	"version": "2.1",
 	"options_page": "options.html",
 	"browser_action": {
 		"default_icon": "icon.png",
@@ -19,9 +19,9 @@
 	"commands": {
 		"play_previous": {
 			"suggested_key": {
-				"default": "Ctrl+Shift+1",
-				"linux": "Ctrl+Shift+1",
-				"mac": "Command+Shift+1"
+				"default": "Ctrl+Shift+8",
+				"linux": "Ctrl+Shift+8",
+				"mac": "Command+Shift+8"
 			},
 			"description": "Play previous",
 			"global": true
@@ -29,9 +29,9 @@
 
 		"play_pause": { 	
 		    "suggested_key": {
-		      "default": "Ctrl+Shift+2",
-		      "mac": "Command+Shift+2",
-		      "linux": "Ctrl+Shift+2"
+		      "default": "Ctrl+Shift+9",
+		      "mac": "Command+Shift+9",
+		      "linux": "Ctrl+Shift+9"
 		    },
 		    "description": "Play/pause",
 		    "global": true
@@ -39,9 +39,9 @@
 
 		"play_next": {
 			"suggested_key": {
-				"default": "Ctrl+Shift+3",
-				"linux": "Ctrl+Shift+3",
-				"mac": "Command+Shift+3"
+				"default": "Ctrl+Shift+0",
+				"linux": "Ctrl+Shift+0",
+				"mac": "Command+Shift+0"
 			},
 			"description": "Play Next",
 			"global": true
