@@ -12,9 +12,11 @@
 
 	"permissions": [
 		"tabs",
+		"storage",
 		"background",
 		"https://www.youtube.com/",
-		"http://gaana.com/"
+		"http://gaana.com/",
+		"http://www.saavn.com/"
 	],
 
 	"commands": {
