@@ -1,5 +1,6 @@
 
 var loaded_tab_id;
+var current_tab = 'current_tabid';
 
 function execute_code(TabId, class_div){
 	 var script = "document.querySelector('" + class_div + "').click();";
@@ -49,21 +50,56 @@ function play_pause(tab){
 				execute_code(TabId, '#play');
 			}
 		}
+		else{
+			result_tab = tab.url.search("soundcloud");
+			if(result_tab != -1){
+				execute_code(TabId, '.playControl');
+			}
+		}
 	}
 }
 
-var current_tab = 'current_tabid';
+function find_audible_tab(tab){
+	var found_audible_tab = false;
+	for(i = 0; i<tab.length; i++){
+		if(tab[i].audible){
+			found_audible_tab = true;
+			play_pause(tab[i]);
+			save_data(current_tab, tab[i].id);
+			break;
+		}
+	}
+	if(!found_audible_tab){
+		play_pause(tab[0]);
+		save_data(current_tab, tab[0].id);
+	}
+}
+
+function new_audible_tab(tab){
+	for(i = 0; i<tab.length; i++){
+		if(tab[i].audible){
+			console.log('yo found a tab', tab[i].id);
+			clear_storage(current_tab);
+			loaded_tab_id = tab[i].id;
+			save_data(current_tab, loaded_tab_id);
+			break;
+		}
+	}
+}
+
 function random_func(){
 	load_data(current_tab);
 	var other_tab_found = false;	//tab other than youtube
 	
-	chrome.tabs.query({'url' : ['*://gaana.com/*', '*://www.saavn.com/*']},function(tab){
+	chrome.tabs.query({'url' : ['*://gaana.com/*', '*://www.saavn.com/*', '*://soundcloud.com/*']},function(tab){
 		if(tab.length>0){
 
 			other_tab_found = true;
 
 			//load data, if there is any tabid stored
 			if(loaded_tab_id != undefined){
+				new_audible_tab(tab);
+				
 				console.log('tab found: 	',loaded_tab_id);
 				var current_tabid_exist = false;
 				//still saved tab exist
@@ -77,26 +113,23 @@ function random_func(){
 				}
 				if(!current_tabid_exist){
 					console.log('tab_not_exist');
-					play_pause(tab[0]);							//take action on first tab
 					clear_storage(current_tab);					//tab not found clear storage
-					save_data(current_tab, tab[0].id);			//save current tab
+					find_audible_tab(tab);
+					// play_pause(tab[0]);							//take action on first tab
+					// save_data(current_tab, tab[0].id);			//save current tab
 				}
 			}
 			else{
 				console.log('undefined, clear storage');
 				//if a tab is audible
 				//save tabid then take actions on that tab
-				for(i = 0; i<tab.length; i++){
-					if(tab[i].audible){
-						save_data(current_tab, tab[i].id);
-						break;
-					}
-				}
+				find_audible_tab(tab);
 			}
 			
 		}
 		else{
-			other_tab_found = false;		//if gaana or saavan tabs not found, go for youtube
+			clear_storage(current_tab);							//tab not found clear storage
+			other_tab_found = false;							//if gaana or saavan tabs not found, go for youtube
 		}
 	});
 	chrome.tabs.query({'url' : '*://www.youtube.com/watch*'},function(tab){
