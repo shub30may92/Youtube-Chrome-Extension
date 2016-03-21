@@ -7,7 +7,8 @@ chrome.commands.onCommand.addListener(function(command) {
   console.log('onCommand event received for message: ', command);
   var TabId = 0;
   chrome.tabs.query({'url':'*://www.youtube.com/watch*'},function(tab){
-      if(tab != undefined){
+      if(tab .length > 0)
+      {
 	      TabId = tab[0].id;
 	      if(command == "play_pause"){
 		      chrome.tabs.executeScript(TabId,{
@@ -27,25 +28,26 @@ chrome.commands.onCommand.addListener(function(command) {
 		}
 		else{
 			chrome.tabs.query({'url':'*://gaana.com/*'},function(tab){
-			if(tab != undefined){
-			  TabId = tab[0].id;
-			  if(command == "play_pause"){
-			      chrome.tabs.executeScript(TabId,{
-			        code: "document.querySelector('.playPause').click();"
-			      });
-			  }
-			  if(command == "play_next"){
-			      chrome.tabs.executeScript(TabId,{
-			        code: "document.querySelector('.next').click();"
-			      });
-			  }
-			  if(command == "play_previous"){
-			      chrome.tabs.executeScript(TabId,{
-			        code: "document.querySelector('.prev').click();"
-			      });
-			  }
-			}
-		});
+				if(tab.length > 0){
+				  TabId = tab[0].id;
+				  if(command == "play_pause"){
+				      chrome.tabs.executeScript(TabId,{
+				        code: "document.querySelector('.playPause').click();"
+				      });
+				  }
+				  if(command == "play_next"){
+				      chrome.tabs.executeScript(TabId,{
+				        code: "document.querySelector('.next').click();"
+				      });
+				  }
+				  if(command == "play_previous"){
+				      chrome.tabs.executeScript(TabId,{
+				        code: "document.querySelector('.prev').click();"
+				      });
+				  }
+				}
+			});
+		}
 
-  	}
+ 	});
 });
