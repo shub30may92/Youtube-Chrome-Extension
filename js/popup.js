@@ -55,6 +55,12 @@ function play_pause(tab){
 			if(result_tab != -1){
 				execute_code(TabId, '.playControl');
 			}
+			else{
+				result_tab = tab.url.search("8tracks");
+				if(result_tab != -1){
+					execute_code(TabId, '#player_play_button');
+				}
+			}
 		}
 	}
 }
@@ -91,7 +97,7 @@ function random_func(){
 	load_data(current_tab);
 	var other_tab_found = false;	//tab other than youtube
 	
-	chrome.tabs.query({'url' : ['*://gaana.com/*', '*://www.saavn.com/*', '*://soundcloud.com/*']},function(tab){
+	chrome.tabs.query({'url' : ['*://gaana.com/*', '*://www.saavn.com/*', '*://soundcloud.com/*', '*://8tracks.com/*']},function(tab){
 		if(tab.length>0){
 
 			other_tab_found = true;
