@@ -103,7 +103,7 @@ function random_func(){
 	load_data(current_tab);
 	var other_tab_found = false;	//tab other than youtube
 	
-	chrome.tabs.query({'url' : ['*://gaana.com/*', '*://www.saavn.com/*', '*://soundcloud.com/*', '*://8tracks.com/*', '*://play.spotify.com/*']},function(tab){
+	chrome.tabs.query({'url' : ['*://gaana.com/*', '*://www.saavn.com/*', '*://soundcloud.com/*', '*://8tracks.com/*']},function(tab){
 		if(tab.length>0){
 
 			other_tab_found = true;
