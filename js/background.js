@@ -166,7 +166,7 @@ function b_random_func(){
 	b_load_data(b_current_tab);
 	var other_tab_found = false;	//tab other than youtube
 	
-	chrome.tabs.query({'url' : ['*://gaana.com/*', '*://www.saavn.com/*', '*://soundcloud.com/*', '*://8tracks.com/*']},function(tab){
+	chrome.tabs.query({'url' : ['*://gaana.com/*', '*://www.saavn.com/*', '*://soundcloud.com/*', '*://8tracks.com/*', '*://play.spotify.com/*']},function(tab){
 		if(tab.length>0){
 
 			other_tab_found = true;
@@ -248,4 +248,5 @@ chrome.commands.onCommand.addListener(function(command) {
 	shortcut = command;
 	if(command == "play_pause" || command == "play_next" || command == "play_previous")
 		b_random_func();
+	//document.getElementById('app-player').contentWindow.document.querySelector('#play-pause').click()	//for spotify
 });
