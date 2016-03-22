@@ -219,10 +219,21 @@ function b_random_func(){
 				}
 			}
 			else{
-				// console.log('4'+other_tab_found);
-				chrome.tabs.executeScript(TabId,{
-				code: "document.querySelector('.ytp-play-button').click();"
-				});
+				if(shortcut == "play_pause"){
+					chrome.tabs.executeScript(TabId,{
+					code: "document.querySelector('.ytp-play-button').click();"
+					});
+				}
+				else if(shortcut == "play_previous"){
+					chrome.tabs.executeScript(TabId,{
+					code: "document.querySelector('.ytp-prev-button').click();"
+					});
+				}
+				else if(shortcut == "play_next"){
+					chrome.tabs.executeScript(TabId,{
+					code: "document.querySelector('.ytp-next-button').click();"
+					});
+				}
 			}
 		}
 	});
