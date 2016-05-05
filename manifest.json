@@ -1,9 +1,9 @@
 {
 	"manifest_version": 2,
 
-	"name": "Play/Pause youtube videos",
-	"description": "This extension searches through tabs if a youtube video is being played, then plays/pauses it.",
-	"version": "2.1",
+	"name": "Music Keys",
+	"description": "Adds global shortcuts for play/pause, next, previous to music/videos in YouTube, gaana, SoundCloud, 8tracks.",
+	"version": "3",
 	"options_page": "options.html",
 	"browser_action": {
 		"default_icon": "icon.png",
@@ -16,7 +16,6 @@
 		"background",
 		"https://www.youtube.com/",
 		"http://gaana.com/",
-		"http://www.saavn.com/",
 		"https://soundcloud.com/",
 		"http://8tracks.com/",
 		"https://play.spotify.com/"

@@ -40,7 +40,7 @@ function play_pause(tab){
 		execute_code(TabId, '.playPause');
 	}
 	else{
-		result_tab = tab.url.search("saavn");
+		//result_tab = tab.url.search("saavn");
 		// console.log('saavn'+result_tab);
 		if(result_tab != -1){
 			if(tab.audible){
@@ -103,7 +103,8 @@ function random_func(){
 	load_data(current_tab);
 	var other_tab_found = false;	//tab other than youtube
 	
-	chrome.tabs.query({'url' : ['*://gaana.com/*', '*://www.saavn.com/*', '*://soundcloud.com/*', '*://8tracks.com/*']},function(tab){
+	//chrome.tabs.query({'url' : ['*://gaana.com/*', '*://www.saavn.com/*', '*://soundcloud.com/*', '*://8tracks.com/*']},function(tab){
+	chrome.tabs.query({'url' : ['*://gaana.com/*', '*://soundcloud.com/*', '*://8tracks.com/*']},function(tab){
 		if(tab.length>0){
 
 			other_tab_found = true;
