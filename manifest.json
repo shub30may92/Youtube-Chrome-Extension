@@ -3,7 +3,7 @@
 
 	"name": "Music Keys",
 	"description": "Adds global shortcuts for play/pause, next, previous to music/videos in YouTube, gaana, SoundCloud, 8tracks.",
-	"version": "3",
+	"version": "3.1",
 	"options_page": "options.html",
 	"browser_action": {
 		"default_icon": "icon.png",
