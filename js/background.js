@@ -99,7 +99,7 @@ function b_play_previous(tab){
 	var result_tab = tab.url.search("gaana");
 	// console.log('gaana'+result_tab);
 	if(result_tab != -1){
-		b_execute_code(TabId, '.prev');
+		b_execute_code(TabId, '.previous');
 	}
 	else{
 		//result_tab = tab.url.search("saavn");
